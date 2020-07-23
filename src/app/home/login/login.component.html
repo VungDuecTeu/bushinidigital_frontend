@@ -1,0 +1,48 @@
+<div class = "login">
+    <mat-card>
+        <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)" class="login">
+            <mat-tab label="Login">
+                <div class="parent">
+                    <br>
+                    <mat-form-field class="wide">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" [(ngModel)]="email" required>
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="wide">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [(ngModel)]="password" required>
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" (click) = "login()" >Login</button>
+                    <a [routerLink] = "['/login']">Forgot passsword or login?</a>
+                    <p> or login with </p>
+                    <button>Google</button>
+                    <button>Facebook</button>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Sign up">
+                <div class="parent">
+                    <br>
+                    <mat-form-field class="wide">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" [(ngModel)]="email" required>
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="wide">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [(ngModel)]="password" required>
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                    </mat-form-field>
+                    <p>or signup with </p>
+                    <button>Google</button>
+                    <button>Facebook</button>
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+    </mat-card>
+</div>

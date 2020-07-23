@@ -1,0 +1,19 @@
+.navbar {
+    justify-content: space-between;
+}
+
+span {
+    padding-right: 1em;
+}
+
+.bannerbutton{
+    background-color: transparent;
+}
+
+.mat-button-toggle {
+    color:white;
+}
+
+.mat-button-toggle-checked{
+    color: gold;
+}

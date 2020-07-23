@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>
+    <mat-button-toggle-group name="fontStyle" style="border: none;">
+      <span>
+        <mat-button-toggle class="bannerbutton" [routerLink]="['/home']">Home</mat-button-toggle>
+      </span>
+      <span>
+        <mat-button-toggle class="bannerbutton">News</mat-button-toggle>
+      </span>
+      <span>
+        <mat-button-toggle class="bannerbutton">Articles</mat-button-toggle>
+      </span>
+      <span>
+        <mat-button-toggle class="bannerbutton">Blogs</mat-button-toggle>
+      </span>
+      <span>
+        <mat-button-toggle class="bannerbutton" [routerLink]="['/createpost']">Create a Post</mat-button-toggle>
+      </span>
+      <span>
+        <mat-button-toggle class="bannerbutton" [routerLink]="['/createpost']">My Posts</mat-button-toggle>
+      </span>
+    </mat-button-toggle-group>
+  </div>
+  <div>
+    <!-- friends -->
+    <span>
+      <button mat-icon-button>
+        <mat-icon>people</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>message</mat-icon>
+      </button>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+        <mat-menu #menu="matMenu">
+          <div *ngIf = "auth.loggedin == false">
+          <button mat-menu-item (click)="login()">
+            <mat-icon>login</mat-icon>
+            <span>Login</span>
+          </button>
+
+          <button mat-menu-item>
+            <mat-icon>how_to_reg</mat-icon>
+            <span>Sign up</span>
+          </button>
+        </div>
+        <div *ngIf = "auth.loggedin == true">
+          <p>Welcome {{user.email}}</p>
+
+          <button mat-menu-item>
+            <mat-icon>how_to_reg</mat-icon>
+            <span>Logout</span>
+          </button>
+        </div>
+        </mat-menu>
+      
+    </span>
+  </div>
+</mat-toolbar>
